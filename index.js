@@ -17,7 +17,7 @@ const axios = require('axios');
         const requestConfig = {timeout: parseInt(core.getInput('maxTimeout') || 300000)} //default timeout of 5min
         const startURLQueryParam = startURL ? `&startUrl=${startURL}` : "";
         const response = await axios.get(`https://api.ghostinspector.com/v1/suites/${suiteID}/execute/?apiKey=${GHOST_INSPECTOR_API_KEY}${startURLQueryParam}`,requestConfig)
-        return response.data.data;
+        return response.data;
     }
 
     function areAllTestsSuccessful(suiteResult){
