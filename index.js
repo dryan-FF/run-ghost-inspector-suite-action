@@ -32,7 +32,8 @@ const axios = require('axios');
         const suiteID = core.getInput('suiteID');
 
         const suiteResult = await getSuiteResult(suiteID,startURL);
-
+        console.log("whats the suite result?")
+        console.log(suiteResult)
         if(areAllTestsSuccessful(suiteResult)){
             core.setOutput("SUCCESS","All test were successful (including screenshot comparison)");
         }else {
